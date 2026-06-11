@@ -37,18 +37,6 @@ export class ArticlesApi extends BaseAPI {
     });
   }
 
-  async editArticle(articleData, userData) {
-    return await this.step(`Edit an existing article`, async () => {
-      return await this.request.put(ROUTES.articles(this._slug).follow, {
-        data: { user: articleData },
-        headers: {
-        authorization: `Token ${userData.token}`,
-        ...this._headers,
-      }
-      });
-    });
-  }
-
   async deleteArticle(userData) {
     return await this.step(`Delete the article`, async () => {
       return await this.request.delete(ROUTES.articles(this._slug).index, {
@@ -124,11 +112,11 @@ export class ArticlesApi extends BaseAPI {
     );
   }
 
-  async assertFollowingHasValueFalse(response) {
-    this.assertFollowingFieldHasValue(response, false);
+  async assertFavoritedHasValueFalse(response) {
+    this.assertFavoritedFieldHasValue(response, false);
   }
 
-  async assertFollowingHasValueTrue(response) {
-    this.assertFollowingFieldHasValue(response, true);
+  async assertFavoritedHasValueTrue(response) {
+    this.assertFavoritedFieldHasValue(response, true);
   }
 }

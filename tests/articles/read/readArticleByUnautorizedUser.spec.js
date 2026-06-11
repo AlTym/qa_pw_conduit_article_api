@@ -15,7 +15,7 @@ test(`Read existing artilce by unautorized user`, async ({
 
   registeredUser.token = '';
 
-  const response = await articlesApi.readArticle();
+  const response = await articlesApi.readArticle(registeredUser);
 
   await articlesApi.assertSuccessResponseCode(response);
 });

@@ -18,7 +18,7 @@ test(`Read artile created by user1 as authorized user2`, async ({
     user1
   );
 
-  await user1.assertSuccessResponseCode(article);
+  await user1Response.assertSuccessResponseCode(article);
 
   const response = await user2Response.readArticle(user2);
 
