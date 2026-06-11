@@ -10,4 +10,9 @@ export const ROUTES = {
     index: `${ROOT}/profiles/${username}`,
     follow: `${ROOT}/profiles/${username}/follow`,
   }),
+  article: `${ROOT}/articles`,
+  articles: slug => ({
+    index: `${ROOT}/articles/${slug}`,
+    favorite: `${ROOT}/articles/${slug}/favorite`,
+  }),
 };

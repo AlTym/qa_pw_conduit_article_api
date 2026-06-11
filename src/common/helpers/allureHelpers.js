@@ -1,11 +1,11 @@
 import { camelCaseToPhrase, capitalize } from './stringHelpers';
 
 export function parseTestTreeHierarchy(fileName, logger) {
-  const testFolder = 'tests/';
+  const testFolder = 'tests\\';
 
   const attributesCamelCase = fileName
     .substring(fileName.indexOf(testFolder) + testFolder.length)
-    .split('/');
+    .split('\\');
 
   let attributes = attributesCamelCase.map(attribute =>
     capitalize(camelCaseToPhrase(attribute)),
